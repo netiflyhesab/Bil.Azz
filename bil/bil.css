@@ -1,0 +1,311 @@
+
+
+.scroll{
+    width: 96%;
+    background-color: blue;
+    color: white;
+    height: 25px;
+    position: fixed;
+    overflow: hidden;
+   
+}
+.scroll p{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    transform: translateX(100%);
+    animation: scroll 25s linear infinite;
+    white-space: nowrap;
+}
+@keyframes scroll {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.help{
+    width: 57px;
+    background-color:azure;
+    height: 990px;
+    position: fixed;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+  
+}
+li{
+    list-style: none;
+}
+ul{
+    padding-left: 5px; 
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+.az{
+    background-color: blue;
+    border-radius: 40%;
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+}
+.eng{
+    background-color: white;
+    border-color: blue;
+    border-radius: 40%;
+    text-align: center;
+    color: blue;
+    width: 40px;
+    transition-duration: 0.7s;
+}
+.rus{
+    background-color: white;
+    border-color: blue;
+    border-radius: 40%;
+    text-align: center;
+    color: blue;
+    width: 40px;
+    transition-duration: 0.7s;
+}
+.rus:hover{
+    background-color: blue;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+.eng:hover{
+    background-color: blue;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+.web{
+    width: 57px;
+    
+}
+.web li a img{
+    width: 30px;
+}
+.web li a img:hover{
+    width: 45px;
+    transition: 1s;
+}
+.logo{
+  
+    width: 100%;
+    height:55px;
+    color: black;
+    padding-top: 5px;
+    display: flex;
+    margin: 0;
+    position: fixed;
+    gap: 20px;
+    background-color: white;
+}
+.logo h1{
+    padding-left: 70px;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+    padding-top: 15px;
+}
+.bas{
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: black;
+    width: 130px;
+    background-color: white;
+   margin-top: 10px;
+    padding-top: 0;
+    text-align: center;
+    border-style: groove;
+   
+}
+.bas p{
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.news{
+    gap: 35px;
+    display: flex;
+    overflow: scroll;
+    scrollbar-width: none;
+    
+}
+.news img{
+    width: 20px;
+    height: 20px;
+    padding-top: 20px;
+   cursor: pointer;
+}
+.bas:hover{
+    background-color: rgba(255, 0, 0, 0.686);
+    transition: 1s;
+    color: white;
+}
+.xeber{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 130px;
+    cursor: pointer;
+    gap: 25px;
+}
+.x:hover{
+    width: 230px;
+    height: 300px;
+    transition: 1s;
+}
+
+.x{
+    width: 200px;
+    height: 270px;
+    border-style: groove;
+    border-color: rgba(0, 0, 0, 0.633);
+    border-radius: 13px;
+}
+.date{
+    color: rgba(0, 0, 0, 0.474);
+}
+
+/*sekiller*/
+
+.sekil{
+  background-image: url("https://images.oxu.az/2026/04/12/mm3TPCIersMNlZI1T0H3oBZJh4BbDG7fRAOQqq7o:600.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil2{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%BD%D0%B5%D1%84%D1%82%D0%B8_%D0%B8_%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8.jpg/500px-%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%BD%D0%B5%D1%84%D1%82%D0%B8_%D0%B8_%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil3{
+  background-image: url("https://i.ytimg.com/vi/yy243gmZ_NU/maxresdefault.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil4{
+  background-image: url("https://avatars.mds.yandex.net/i?id=2c1c28eb580af104d24e96380286578a_l-4458035-images-thumbs&n=13");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil5{
+  background-image: url("https://images.oxu.az/2026/04/11/4nsSdMWuFZBgTSP4QB3TzTAtUeu54Bg5RWp9dWJo:1200.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil6{
+  background-image: url("https://images.oxu.az/2026/04/11/rtw84t3heonPtSHYMaPSK9XlPzJ8y9ONdaMPanHl:1200.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil7{
+  background-image: url("https://images.oxu.az/2026/04/11/xfUZXcdfv4HAdpkWO8quNWNZBokyvhvCmXU2HBow:1200.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil8{
+  background-image: url("https://images.oxu.az/2026/04/12/amAljotKeVc4J50gQ1iKnXbc0V7oKkCENwjpgJEa:1200.webp");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil9{
+  background-image: url("https://images.oxu.az/2026/04/11/iH6gGdfCH1uxS1MuAQnQjJPYjt63I4Hx3AGH0IVn:1200.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+.sekil10{
+  background-image: url("https://images.oxu.az/2026/04/11/lSjUHHxeszX2dQulITP1UGIlNZ5n9ER2SO1iqTkC:1200.jpg");
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+
+
+/*sekiller*/
+
+
+@media only screen and (max-width: 760px){
+            .bas{
+                width: 160px;
+       }
+}
+
+iframe{
+     width: 120px;
+    background-size: contain;
+    height: 789px;
+    position: fixed;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1350px;
+    margin-top: 6px;
+    
+}
+ 
+.end{
+    width: 100%;
+    height: 300px;
+    background-color: grey;
+    
+    
+
+}
+.end h1{
+    padding-left: 70px;
+    color: aliceblue;
+    
+}
+.end table tr td{
+    width: 300px;
+}
+.end table tr td img{
+    width: 25px;
+}
+.end table tr td img:hover{
+    width: 35px;
+    transition: 1s;
+}
+td{
+    gap: 15px;
+}
