@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İsrail Livana zərbə endirib — Bil.az</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy:    #001f4d;
+            --blue:    #003f8f;
+            --red:     #c62828;
+            --accent:  #1565c0;
+            --gold:    #f9a825;
+            --white:   #ffffff;
+            --offwhite:#f7f8fc;
+            --text:    #1a1a2e;
+            --muted:   #5a6272;
+            --border:  #dde3f0;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--offwhite);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        
+        .topbar {
+            background: var(--navy);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        .topbar-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .topbar-logo span { color: #ff6b6b; }
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: white;
+            padding: 7px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.22); }
+        .back-btn svg { width: 15px; height: 15px; }
+
+        
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            background: var(--navy);
+        }
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            opacity: 0.65;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,15,40,0.1) 0%,
+                rgba(0,15,40,0.5) 50%,
+                rgba(0,15,40,0.92) 100%
+            );
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 40px 36px;
+            max-width: 860px;
+        }
+        .hero-cat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--red);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+        .hero-cat::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 1.2s infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(22px, 3.5vw, 36px);
+            font-weight: 900;
+            color: white;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: rgba(255,255,255,0.75);
+            font-size: 12.5px;
+        }
+        .meta-item svg { width: 14px; height: 14px; opacity: 0.8; }
+
+        
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 36px 24px 60px;
+        }
+
+        
+        .article {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 40px;
+            box-shadow: 0 2px 20px rgba(0,31,77,0.07);
+        }
+
+        .article-lead {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--blue);
+            line-height: 1.65;
+            border-left: 4px solid var(--blue);
+            padding-left: 18px;
+            margin-bottom: 28px;
+        }
+
+        .article-body p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #2c3345;
+            margin-bottom: 18px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--navy);
+            margin: 32px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f0fe, #dce9ff);
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 24px 0;
+        }
+        .highlight-box p {
+            font-size: 14.5px;
+            color: #1a2a4a;
+            line-height: 1.7;
+            margin: 0 !important;
+        }
+        .highlight-box strong { color: var(--blue); }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 4px solid #e65100;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 24px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .warning-box .icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+        .warning-box p {
+            font-size: 14.5px;
+            color: #4e2600;
+            line-height: 1.7;
+            margin: 0 !important;
+        }
+
+        .quote-block {
+            margin: 28px 0;
+            padding: 22px 28px;
+            background: var(--offwhite);
+            border-radius: 12px;
+            position: relative;
+        }
+        .quote-block::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: var(--blue);
+            opacity: 0.15;
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            line-height: 1;
+        }
+        .quote-block p {
+            font-size: 16px !important;
+            font-style: italic;
+            color: var(--navy) !important;
+            line-height: 1.65 !important;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 8px !important;
+        }
+        .quote-source {
+            font-size: 13px;
+            color: var(--muted);
+            font-style: normal;
+        }
+
+        .map-visual {
+            background: linear-gradient(135deg, #0a1628, #0d2347);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 28px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .map-visual svg { flex-shrink: 0; }
+        .map-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .map-info p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin: 0 !important;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        .tag {
+            padding: 5px 14px;
+            background: var(--offwhite);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 12.5px;
+            color: var(--accent);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tag:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        
+        .sidebar { display: flex; flex-direction: column; gap: 22px; }
+
+        .side-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 14px rgba(0,31,77,0.07);
+        }
+        .side-card-header {
+            background: var(--navy);
+            color: white;
+            padding: 14px 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .side-card-body { padding: 16px 18px; }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .stat-item {
+            background: var(--offwhite);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--red);
+            display: block;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        .timeline { list-style: none; padding: 0; }
+        .tl-item {
+            display: flex;
+            gap: 14px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+        .tl-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 34px;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .tl-dot {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+            z-index: 1;
+        }
+        .tl-dot.red { background: var(--red); }
+        .tl-content { padding-top: 5px; }
+        .tl-time { font-size: 11px; color: var(--muted); font-weight: 600; }
+        .tl-text { font-size: 13.5px; line-height: 1.5; color: var(--text); margin-top: 3px; }
+
+        .related-list { list-style: none; }
+        .related-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .related-item:last-child { border-bottom: none; }
+        .related-item:hover { opacity: 0.75; }
+        .rel-img {
+            width: 64px; height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--border);
+        }
+        .rel-title { font-size: 12.5px; font-weight: 600; color: var(--text); line-height: 1.4; }
+        .rel-date { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+        /* ── SHARE BAR ── */
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 28px 0 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        .share-label { font-size: 13px; font-weight: 600; color: var(--muted); }
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+        .share-btn:hover { opacity: 0.82; }
+        .share-btn.fb { background: #1877f2; color: white; }
+        .share-btn.tg { background: #0088cc; color: white; }
+        .share-btn.wa { background: #25d366; color: white; }
+        .share-btn.copy { background: var(--offwhite); color: var(--text); border: 1px solid var(--border); }
+
+        
+        @media (max-width: 760px) {
+            .layout { grid-template-columns: 1fr; padding: 16px 12px 40px; }
+            .hero { height: 320px; }
+            .hero-content { padding: 20px 16px; }
+            .article { padding: 22px 18px; }
+            .topbar { padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="topbar">
+        <a href="bil.html" class="topbar-logo">Bil<span>.az</span></a>
+        <a href="bil.html" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Geri qayıt
+        </a>
+    </div>
+
+    
+    <div class="hero">
+        <img class="hero-img"
+             src="https://images.oxu.az/2026/04/12/mm3TPCIersMNlZI1T0H3oBZJh4BbDG7fRAOQqq7o:600.jpg"
+             alt="İsrail Livana zərbə">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-cat">🔴 SON DƏQİQƏ · DÜNYA</div>
+            <h1 class="hero-title">İsrail ABŞ-İran danışıqları fonunda Livana zərbə endirib</h1>
+            <div class="hero-meta">
+                <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Bu Gün · 11:02
+                </span>
+                <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    162 baxış
+                </span>
+                <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Bil.az Redaksiyası
+                </span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="layout">
+
+        <!-- Article -->
+        <article class="article">
+
+            <p class="article-lead">
+                İsrail Hava Qüvvələri ABŞ-İran nüvə danışıqlarının davam etdiyi kritik bir vaxtda Livanın cənubuna hava zərbələri endirdi. Hücumlar Hizbullaha aid hərbi infrastruktur hədəf alınması ilə nəticələndi.
+            </p>
+
+            <div class="article-body">
+
+                <p>
+                    İsrail Müdafiə Qüvvələri (İMQ) şərqi Aralıq dənizi regionunda yenidən gərginliyin artdığını göstərən bir addım ataraq, Cənubi Livanda müxtəlif hədəflərə zərbələr endirdi. Bu hücumlar, Vaşinqton ilə Tehranın nüvə proqramı üzrə sülh danışıqları apardığı bir dövrə təsadüf edir.
+                </p>
+
+                <div class="warning-box">
+                    <span class="icon">⚠️</span>
+                    <p>
+                        <strong>Xəbərdarlıq:</strong> Livanın Cənub İdarəsi tərəfindən bölgə sakinləri üçün xüsusi təhlükəsizlik xəbərdarlığı elan edilib. Hava zərbələri nəticəsində infrastruktur zədələnib.
+                    </p>
+                </div>
+
+                <h2>Hücumların Təfərrüatı</h2>
+
+                <p>
+                    İlk məlumatlara görə, İsrail döyüş təyyarələri Cənubi Livanın Tir, Sur və Nabatiyyə rayonlarında Hizbullaha məxsus silah anbarlarını, raket buraxılış meydançalarını və komanda-nəzarət qurğularını hədəf alıb. Zərbələr gecə saatlarında — yerli vaxtla saat 02:00-dan 04:00-a qədər — icra edilib.
+                </p>
+
+                <p>
+                    Livan Milli Xəbər Agentliyi ən azı 3 zərbənin Nabatiyyə bölgəsinə, 2 zərbənin isə Sur ətraflarına endirildiyini bildirdi. İlkin məlumata görə, yerli sakinlər binalar yaxınlığında güclü partlayış səsləri eşidiblər. İnsanlara dair zərər barədə rəsmi məlumat hələ dəqiqləşdirilmir.
+                </p>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Kontekst:</strong> Bu zərbələr, ABŞ Dövlət Katibi və İran Xarici İşlər Nazirinin Omanda həftə sonunu keçirdiyi üçüncü raund danışıqlarından cəmi <strong>36 saat sonra</strong> baş verib. Analitiklər İsrailin bu addımı diplomatik müzakirələrə öz münasibətini bildirmək üçün atdığını güman edir.
+                    </p>
+                </div>
+
+                <h2>İsrail Hökumətinin Mövqeyi</h2>
+
+                <p>
+                    İsrail Baş Nazirinin ofisi tərəfindən yayılan qısa açıqlamada hücumlar "Şimali İsrail ərazisinə qarşı planlanan hərbi provokasiyalara cavab" kimi xarakterizə edilib. İMQ sözçüsü isə sosial mediada paylaşdığı mesajda hücumların "dəqiq kəşfiyyat məlumatlarına" əsaslandığını vurğulayıb.
+                </p>
+
+                <div class="quote-block">
+                    <p>
+                        Hizbullahın Livandakı hərbi gücünü azaltmaq İsrailin strateji maraqlarına uyğundur; bu, heç bir diplomatik prosesi ləğv etmir. Biz öz xalqımızın təhlükəsizliyini hər şeydən üstün tuturuq.
+                    </p>
+                    <span class="quote-source">— İsrail MN rəsmisi, adı açıqlanmayıb</span>
+                </div>
+
+                <h2>Beynəlxalq Reaksiyalar</h2>
+
+                <p>
+                    Fransanın Xarici İşlər Nazirliyi dərhal açıqlama yayaraq "Livanın ərazi bütövlüyünün kobud şəkildə pozulmasını" pislədi. Beyrut hökuməti isə BMT Təhlükəsizlik Şurasına müraciət etməyi planlaşdırdığını bildirdi.
+                </p>
+
+                <p>
+                    ABŞ Xarici İşlər Departamentinin nümayəndəsi jurnalistlərə cavab olaraq Vaşinqtonun "bölgədə qoşunların azaldılmasını" dəstəklədiyini, lakin "müttəfiqinin müdafiə hüququna hörmət etdiyini" bildirdi. Bu ikiqiymətli bəyanat tənqidçilər tərəfindən sərt reaksiya doğurdu.
+                </p>
+
+                <p>
+                    Hizbullahın media qanadı hücumları "açıq təcavüz" adlandırdı və "müvafiq vaxtda cavab" veriləcəyini elan etdi, lakin konkret hərəkət barədə məlumat vermədi.
+                </p>
+
+                <h2>Diplomatik Mənzərəyə Təsiri</h2>
+
+                <p>
+                    Siyasi analitiklər İsrailin bu addımını bir neçə bucaqdan şərh edirlər: bir tərəfdən, İranla razılaşma əldə olunarsa bunun Hizbullahın güclənməsinə yol açacağından narahatlıq; digər tərəfdən isə daxili siyasi təzyiqlər fonunda güclü görünmə ehtiyacı.
+                </p>
+
+                <p>
+                    ABŞ-İran danışıqları çərçivəsini koordinasiya edən diplomatik mənbələr bildirir ki, zərbələr danışıqları "dərhal pozmayıb", lakin hər iki tərəfin nümayəndə heyətlərini ciddi şəkildə gərginləşdirib. Görüşün növbəti raundu planlaşdığı kimi davam edib-etməyəcəyi hələ bilinmir.
+                </p>
+
+                <div class="map-visual">
+                    <svg width="90" height="90" viewBox="0 0 90 90">
+                        <circle cx="45" cy="45" r="42" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+                        <circle cx="45" cy="45" r="30" fill="#0d2347" stroke="#1565c0" stroke-width="1"/>
+                        
+                        <polygon points="45,20 52,32 50,45 45,55 40,45 38,32" fill="#1565c0" opacity="0.8"/>
+                        
+                        <circle cx="45" cy="18" r="5" fill="#c62828"/>
+                        <circle cx="45" cy="18" r="9" fill="none" stroke="#c62828" stroke-width="1.5" opacity="0.5">
+                            <animate attributeName="r" from="5" to="14" dur="1.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="52" y="14" fill="#ff8a80" font-size="7" font-family="sans-serif">LİVAN</text>
+                        <text x="42" y="38" fill="white" font-size="6" font-family="sans-serif">İSRAİL</text>
+                    </svg>
+                    <div class="map-info">
+                        <h3>📍 Zərbə Məntəqələri</h3>
+                        <p>
+                            Nabatiyyə vilayəti · Sur (Sour) şəhəri · Tir bölgəsi<br>
+                            — Cənub Livanın İsrail sərhədinə yaxın hissələri
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="tag-list">
+                    <span class="tag">#İsrail</span>
+                    <span class="tag">#Livan</span>
+                    <span class="tag">#Hizbullah</span>
+                    <span class="tag">#ABŞ-İran</span>
+                    <span class="tag">#Yaxın Şərq</span>
+                    <span class="tag">#Nüvə Danışıqları</span>
+                    <span class="tag">#Dünya Xəbərləri</span>
+                </div>
+
+                <!-- Share Bar -->
+                <div class="share-bar">
+                    <span class="share-label">Paylaş:</span>
+                    <button class="share-btn fb">📘 Facebook</button>
+                    <button class="share-btn tg" onclick="window.open('https://t.me/+994559206485')">✈️ Telegram</button>
+                    <button class="share-btn wa" onclick="window.open('https://api.whatsapp.com/send/?phone=%2B994559206485')">📱 WhatsApp</button>
+                    <button class="share-btn copy" id="copyBtn">🔗 Kopyala</button>
+                </div>
+            </div>
+
+        </article>
+
+       
+        <aside class="sidebar">
+
+           
+            <div class="side-card">
+                <div class="side-card-header">📊 Əsas rəqəmlər</div>
+                <div class="side-card-body">
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <span class="stat-num">5+</span>
+                            <div class="stat-label">Zərbə sayı</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">36h</span>
+                            <div class="stat-label">Danışıqlardan sonra</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">3</span>
+                            <div class="stat-label">Rayon zərər gördü</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">3.</span>
+                            <div class="stat-label">Raund danışıq</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="side-card">
+                <div class="side-card-header">🕐 Hadisələrin xronologiyası</div>
+                <div class="side-card-body">
+                    <ul class="timeline">
+                        <li class="tl-item">
+                            <div class="tl-dot">1</div>
+                            <div class="tl-content">
+                                <div class="tl-time">2 gün əvvəl</div>
+                                <div class="tl-text">ABŞ-İran 3-cü raund danışıqları Omanda başladı</div>
+                            </div>
+                        </li>
+                        <li class="tl-item">
+                            <div class="tl-dot">2</div>
+                            <div class="tl-content">
+                                <div class="tl-time">Dünən</div>
+                                <div class="tl-text">Danışıqlar razılıqsız başa çatdı, hər iki tərəf "irəliləyiş" olduğunu bildirdi</div>
+                            </div>
+                        </li>
+                        <li class="tl-item">
+                            <div class="tl-dot red">3</div>
+                            <div class="tl-content">
+                                <div class="tl-time">Bu gün, 02:00</div>
+                                <div class="tl-text">İsrail Cənubi Livana hava zərbələri endirdi</div>
+                            </div>
+                        </li>
+                        <li class="tl-item">
+                            <div class="tl-dot">4</div>
+                            <div class="tl-content">
+                                <div class="tl-time">Bu gün, 09:00</div>
+                                <div class="tl-text">Fransa, BMT və Livan hökuməti reaksiyalarını bildirdi</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="side-card">
+                <div class="side-card-header">📰 Oxşar xəbərlər</div>
+                <div class="side-card-body" style="padding: 10px 18px 14px;">
+                    <ul class="related-list">
+                        <li class="related-item" onclick="window.location.href='bil.html'">
+                            <img class="rel-img" src="https://images.oxu.az/2026/04/11/rtw84t3heonPtSHYMaPSK9XlPzJ8y9ONdaMPanHl:1200.jpg" alt="">
+                            <div>
+                                <div class="rel-title">ABŞ və İran arasında danışıqlar başa çatdı</div>
+                                <div class="rel-date">Bu Gün · 17:22</div>
+                            </div>
+                        </li>
+                        <li class="related-item" onclick="window.location.href='bil.html'">
+                            <img class="rel-img" src="https://images.oxu.az/2026/04/11/xfUZXcdfv4HAdpkWO8quNWNZBokyvhvCmXU2HBow:1200.jpg" alt="">
+                            <div>
+                                <div class="rel-title">ABŞ Hörmüz boğazını minalardan təmizləyəcək</div>
+                                <div class="rel-date">Bu Gün · 23:12</div>
+                            </div>
+                        </li>
+                        <li class="related-item" onclick="window.location.href='bil.html'">
+                            <img class="rel-img" src="https://images.oxu.az/2026/04/11/4nsSdMWuFZBgTSP4QB3TzTAtUeu54Bg5RWp9dWJo:1200.jpg" alt="">
+                            <div>
+                                <div class="rel-title">Ölən qohumunun yanına 'Mercedes' basdırdı</div>
+                                <div class="rel-date">Bu Gün · 14:15</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <script>
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                this.textContent = '✅ Kopyalandı!';
+                setTimeout(() => this.textContent = '🔗 Kopyala', 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>
